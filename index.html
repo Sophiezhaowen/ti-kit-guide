@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TI Kit Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background: #000000; /* Purdue Black */
+      color: #CFB991; /* Purdue Gold */
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Tab navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #CFB991; /* Purdue Gold */
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #000000;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav button.active {
+      background: #000000;
+      color: #CFB991;
+    }
+
+    nav button:hover {
+      background: #333333;
+      color: #CFB991;
+    }
+
+    /* Tab content */
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    h2, h3 {
+      color: #000000;
+    }
+
+    .step {
+      background: #f8f8f8;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 6px solid #CFB991;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .step img {
+      max-width: 100%;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #eee;
+      padding: 0.5rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TI Kit Help Center</h1>
+    <p></p>
+      
+  </header>
+
+  <!-- Tab Navigation -->
+  <nav>
+    <button class="tab-btn active" onclick="openTab('getting-started')">Getting Started</button>
+    <button class="tab-btn" onclick="openTab('troubleshooting')">TI Kit Troubleshooting</button>
+    <button class="tab-btn" onclick="openTab('activities')">TI Kit Activities</button>
+  </nav>
+
+  <!-- Tab Contents -->
+
+  <!-- GETTING STARTED -->  
+  <section id="getting-started" class="tab-content active">
+  <h2>Getting Started</h2>
+
+  <!-- Step 1 -->
+<div class="step">
+  <strong>Step 1:</strong> Create a folder on your desktop to store TI Kit files.<br>
+
+  <figure style="text-align: left;">
+    <img src="getting_started/getting_started_step1.png" alt="Create folder on desktop" style="max-width: 80%;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+      Figure 1: Example of creating a folder on the desktop.
+    </figcaption>
+  </figure>
+
+</div>
+
+  <!-- Step 2 -->
+  <div class="step">
+  <strong>Step 2:</strong> Check your TI Kit version: we are using  <b>MSP-EXP430FR5994</b> for this class.<br>
+
+  <figure style="text-align: left;">
+    <img src="getting_started/getting_started_step2.png" alt="Chek TI Kit Version" style="max-width: 70%;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+      Figure 2: Check version from the TI board.
+    </figcaption>
+  </figure>
+
+</div>
+
+  <!-- Step 3 -->
+  <div class="step">
+    <strong>Step 3:</strong> Download
+    <a href="https://www.energia.nu/download/" target="_blank" style="color:#CFB991;">
+    <b>Energia IDE</b></a> (choose your operating system) and unzip. 
+
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Mac OS</button>
+        <div class="accordion-content">
+          <p>Mac users please download from 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-macosx-signed.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Windows</button>
+        <div class="accordion-content">
+          <p>Windows users please download from here 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-windows.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+          <ol style="line-height: 1.8;"> 
+            <li>Download the zipped file using the link above.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.1.png" alt="Create folder on desktop" style="max-width: 80%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.1: Downdoaded file.
+            </figcaption>
+            </li>
+
+            <li>Extract everything to the folder you created in <i>Step 1</i>. Please note that everything MUST be remained in the same folder after extraction.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.2: Right click the zipped folder to extract.
+            </figcaption>
+            </figure>
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.3.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.3: Extract the zipped file to the designated location.
+            </figcaption>
+            </li>
+
+            <li>After extraction, feel free to delete the original zipped folder.</li>
+
+            <li>Please check if there is a <b>driver folder</b> in your unzipped folder.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.4.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.4: Check if there is a driver folder.
+            </figcaption>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Linux</button>
+        <div class="accordion-content">
+          <p>Linux users please download from here 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-linux64.tar.xz" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step">
+    <strong>Step 4:</strong> Configure the course files in Energia.
+    <ol style="line-height: 1.8;"> 
+    <li>Open Energia IDE. This will create a folder in your Documents titled “Energia”.</li>
+    <li>Download the ENGR 131 Sketchbook.</li>
+    <li>Unzip the ENGR 131 sketchbook file and copy the following folders into the “Energia” folder in your Documents:
+      <ul>
+        <li>ENGR 131</li>
+        <li>LaunchPad_Grove_Kit</li>
+      </ul>
+    </li>
+    <li>Close and restart Energia.</li>
+    <li>Navigate to <code>File</code> → <code>Sketchbook</code>, and you should see the 
+      <code>ENGR 131</code> and <code>LaunchPad_Grove_Kit</code> folders with sketches available to use for class.
+    </li>
+  </ol>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="step">
+    <strong>Step 5:</strong> Setup Energia to communicate with the TI kits.
+    <ol style="line-height: 1.8;"> 
+    <li>Connect the MSP430 board to your laptop using a cable.</li>
+    <li>In Energia, open <code>Tools</code> and set the following:
+      <ul>
+        <li><code>Board</code> → <code>MSP-EXP430FR5994LP</code>
+          <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step5.1.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 5.1: Selecting the correct board.
+            </figcaption>
+            </figure>
+        </li>
+        <li><code>Port</code> → Select the port that corresponds to your laptop’s USB/Type-C connection.
+          If you are unsure which port it is, try each option until the board is detected.
+          <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step5.2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 5.2: Selecting port.
+            </figcaption>
+            </figure>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  </div>
+
+
+</section>
+
+<style>
+  .accordion {
+    margin-top: 1rem;
+  }
+
+  .accordion-item {
+    border: 2px solid #CFB991; /* Purdue Gold */
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    width: 100%;
+    text-align: left;
+    background: #fdfdfd; /* Purdue Black */
+    color: #2e2e2e;
+    font-weight: bold;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background: #CFB991;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 1rem;
+    background: #fdfdfd;
+  }
+
+  .accordion-item.active .accordion-content {
+    display: block;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+  
+
+  <!-- TROUBLESHOOTING -->  
+
+  <section id="troubleshooting" class="tab-content">
+    <h2>TI Kit Troubleshooting</h2>
+    <p>Here are common problems and their solutions.</p>
+    <div class="step">
+      <strong>Example:</strong> To be updated...
+    </div>
+  </section>
+
+ 
+  <!-- ACTIVITIES -->  
+  <section id="activities" class="tab-content">
+  <h2>TI Kit Activities</h2>
+  <p>Click on an activity to expand and view details:</p>
+
+  <!-- Activity 1 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity XX: Blink an LED</div>
+    <div class="activity-content">
+      <p><strong>Objective:</strong> Learn how to blink an LED using GPIO pins.</p>
+      <p><strong>Tasks:</strong></p>
+      <ul>
+        <li>Connect the LED to the TI Kit board.</li>
+        <li>Write code to toggle the GPIO pin.</li>
+        <li>Upload the code and observe the LED blinking.</li>
+      </ul>
+      <p><strong>Source File:</strong> <a href="files/activity1-blink.zip" target="_blank">Download Activity 1 Code</a></p>
+    </div>
+  </div>
+
+  <!-- Activity 2 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity XX: Buzzer</div>
+    <div class="activity-content">
+      <p><strong>Objective:</strong> Practice reading analog values from a temperature sensor.</p>
+      <p><strong>Tasks:</strong></p>
+      <ul>
+        <li>Wire the temperature sensor to the board.</li>
+        <li>Write code to read the analog input.</li>
+        <li>Print sensor values to the serial monitor.</li>
+      </ul>
+      <p><strong>Source File:</strong> <a href="files/activity2-sensor.zip" target="_blank">Download Activity 2 Code</a></p>
+    </div>
+  </div>
+
+  <!-- Activity 3 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity XX: Taum Sauk</div>
+    <div class="activity-content">
+      <p><strong>Objective:</strong> Learn how to send and receive messages using UART.</p>
+      <p><strong>Tasks:</strong></p>
+      <ul>
+        <li>Set up UART communication on the TI Kit.</li>
+        <li>Send text from the kit to your computer.</li>
+        <li>Receive commands and display them on the serial monitor.</li>
+      </ul>
+      <p><strong>Source File:</strong> <a href="files/activity3-serial.zip" target="_blank">Download Activity 3 Code</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .activity-box {
+    border: 2px solid #CFB991; /* Purdue Gold */
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+
+  .activity-header {
+    background: #f9f9f9; 
+    color: #2e2e2e; 
+    padding: 1rem;
+    font-weight: bold;
+  }
+
+  .activity-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .activity-box.active .activity-content {
+    max-height: 500px; /* enough to expand */
+    padding: 1rem;
+  }
+</style>
+
+<script>
+  function toggleActivity(box) {
+    box.classList.toggle("active");
+  }
+</script>
+
+
+  <script>
+    function openTab(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Remove active state from buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show the selected tab
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
