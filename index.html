@@ -230,6 +230,7 @@
   </div>
 
   <!-- Step 4 -->
+<!---
   <div class="step">
     <strong>Step 4:</strong> Configure the course files in Energia.
     <ol style="line-height: 1.8;"> 
@@ -247,10 +248,10 @@
     </li>
   </ol>
   </div>
-
+-->
   <!-- Step 5 -->
   <div class="step">
-    <strong>Step 5:</strong> Setup Energia to communicate with the TI kits.
+    <strong>Step 4:</strong> Setup Energia to communicate with the TI kits.
     <ol style="line-height: 1.8;"> 
     <li>Connect the MSP430 board to your laptop using a cable.</li>
     <li>In Energia, open <code>Tools</code> and set the following:
@@ -349,16 +350,35 @@
 
   <!-- Activity 1 -->
   <div class="activity-box" onclick="toggleActivity(this)">
-    <div class="activity-header">In-Class Activity XX: Blink an LED</div>
+    <div class="activity-header">In-Class Activity 2B/3A: Blink an LED</div>
     <div class="activity-content">
-      <p><strong>Objective:</strong> Learn how to blink an LED using GPIO pins.</p>
+      <p style="line-height: 1.8;"> 
+        <strong>Objective:</strong> In this activity, you will practice controlling the built-in LEDs on the MSP430FR5994 by programming them to turn on, 
+        blink at different speeds, alternate, and follow simple patterns. You will also measure the timing of the blinks with a stopwatch to see how human 
+        error affects consistency, then analyze your results using basic statistics. By the end, you’ll gain hands-on experience with both programming a 
+        microcontroller and evaluating real data to support design decisions.</p>
       <p><strong>Tasks:</strong></p>
-      <ul>
-        <li>Connect the LED to the TI Kit board.</li>
-        <li>Write code to toggle the GPIO pin.</li>
-        <li>Upload the code and observe the LED blinking.</li>
-      </ul>
-      <p><strong>Source File:</strong> <a href="files/activity1-blink.zip" target="_blank">Download Activity 1 Code</a></p>
+      <ol style="line-height: 1.8;"> 
+        <li>Turn on one of the LaunchPad LEDs (green or red).</li>
+        <li>Change the blinking speed of that LED.</li>
+        <li>Turn on the second built-in LED.</li>
+        <li>Create an alternating blinking interval to 2 seconds using <code>delay(2000)</code>.</li>
+        <li>Measure the ON and OFF times manually with a stopwatch for at least 10 cycles (this will incorporate human error).</li>
+        <li>Record your data in Excel, calculate descriptive statistics (mean, standard deviation, minimum, maximum), and create a graph of the results.</li>
+      </ol>
+      <p><strong>Source File:</strong></p>
+        <ul style="line-height: 1.8;">
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_instruction.docx" target="_blank" style="color:#CFB991;"><b>Instruction</b></a></li>          
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_student_worksheet.docx" target="_blank" style="color:#CFB991;"><b>Worksheet</b></a></li>          
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_data_analysis.xlsx" target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>          
+        </ul>
+
+        <style>
+          ul li::marker {
+            color: #CFB991;  /* example: Purdue gold tone */
+            font-size: 1.2em; /* optional: make bullets bigger */
+          }
+</style>
     </div>
   </div>
 
@@ -366,14 +386,13 @@
   <div class="activity-box" onclick="toggleActivity(this)">
     <div class="activity-header">In-Class Activity XX: Buzzer</div>
     <div class="activity-content">
-      <p><strong>Objective:</strong> Practice reading analog values from a temperature sensor.</p>
+      <p><strong>Objective:</strong> </p>
       <p><strong>Tasks:</strong></p>
-      <ul>
-        <li>Wire the temperature sensor to the board.</li>
-        <li>Write code to read the analog input.</li>
-        <li>Print sensor values to the serial monitor.</li>
-      </ul>
-      <p><strong>Source File:</strong> <a href="files/activity2-sensor.zip" target="_blank">Download Activity 2 Code</a></p>
+      <ol style="line-height: 1.8;"> 
+      
+        <li></li>
+      </ol>
+      
     </div>
   </div>
 
@@ -381,14 +400,11 @@
   <div class="activity-box" onclick="toggleActivity(this)">
     <div class="activity-header">In-Class Activity XX: Taum Sauk</div>
     <div class="activity-content">
-      <p><strong>Objective:</strong> Learn how to send and receive messages using UART.</p>
+      <p><strong>Objective:</strong> </p>
       <p><strong>Tasks:</strong></p>
-      <ul>
-        <li>Set up UART communication on the TI Kit.</li>
-        <li>Send text from the kit to your computer.</li>
-        <li>Receive commands and display them on the serial monitor.</li>
-      </ul>
-      <p><strong>Source File:</strong> <a href="files/activity3-serial.zip" target="_blank">Download Activity 3 Code</a></p>
+      <ol style="line-height: 1.8;">
+        <li></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -405,7 +421,7 @@
   }
 
   .activity-header {
-    background: #f9f9f9; 
+    background: #CFB991; 
     color: #2e2e2e; 
     padding: 1rem;
     font-weight: bold;
