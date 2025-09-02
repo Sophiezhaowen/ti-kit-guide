@@ -352,7 +352,32 @@
     <h2>TI Kit Troubleshooting</h2>
     <p>Here are common problems and their solutions.</p>
     <div class="step">
-      <strong>Example:</strong> To be updated...
+      <strong>Communication error between Energia IDE and your TI kit</strong>
+      <ol style="line-height: 1.8;">
+        <li>Ensure your TI kit is plugged in correctly using the provided Micro B (to either USB or Type C) cable.
+          There should be a green power LED lit up when this occurs.</li>
+        <li>The COM port seleted in Energia is not the correct port. While it is generally the highest port number
+          available, this is not always true. All COM ports should be tested if there are Communication issues.</li>
+        <li>Ensure all drivers have been installed. Please refer to <i>Step 3</i> in <i>Getting Started</i>.</li>
+        <li>Restart Energia IDE.</li>
+        <li>Restart your computer. This should not be required, but can help depending on your computer's settings.</li>
+      </ol>
+    </div>
+    <div class="step">
+      <strong>Error uploading sketches to your TI kit</strong>
+      <ol style="line-height: 1.8;">
+        <li>Ensure your TI kit is plugged in correctly using the provided Micro B (to either USB or Type C) cable.
+          There should be a green power LED lit up when this occurs.</li>
+        <li>Ensure the board is updated with the latest package: <code>Tools</code> → <code>Board</code> → <code>Board Manager</code>. 
+          Under MSP430 dropdown menu, select the latest version. </li>
+          <figure style="text-align: left;">
+            <img src="troubleshooting/boardversion.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 6: Equip your board with its latest package.
+            </figcaption>
+          </figure>
+
+      </ol>
     </div>
   </section>
 
@@ -383,7 +408,7 @@
       <p><strong>Source File:</strong></p>
         <ul style="line-height: 1.8;">
          <li><a href="document/ICA1_instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
-         <li><a href="document/ICA1_student_worksheet.pdf" download style="color:#CFB991;"><b>Worksheet</b></a></li>          
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_student_worksheet.docx" style="color:#CFB991;"><b>Worksheet</b></a></li>          
          <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_data_analysis.xlsx" target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>          
         </ul>
 
