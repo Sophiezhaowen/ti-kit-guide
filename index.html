@@ -143,7 +143,84 @@
 
   <!-- Step 3 -->
   <div class="step">
-    <strong>Step 3:</strong> Download
+    <strong>Step 3:</strong> Download and install the launchpad drivers. 
+
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Mac OS</button>
+        <div class="accordion-content">
+          <p>Mac users please download from 
+            <a href="https://engineering.purdue.edu/fye_i2i/wp-content/uploads/2022/08/MSP430LPCDC-1.0.3b-Signed-1.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Windows</button>
+        <div class="accordion-content">
+        <ol style="line-height: 1.8;"> 
+        <li>Windows users please download from 
+            <a href="https://engineering.purdue.edu/fye_i2i/wp-content/uploads/2022/08/energia_drivers.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.
+              <ul style="line-height: 1.8;">
+                <li>These drivers are not signed and may require you to disable the signed driver feature in windows. Please click 
+                <a href="https://learn.sparkfun.com/tutorials/disabling-driver-signature-on-windows-8" target="_blank" style="color:#CFB991;">
+                <b>here</b></a> for a guid on how to do so.
+                </li>
+              </ul>
+        </li>
+    
+
+        <li>Run the installer.
+          <ol style="line-height: 1.8;">
+            <li>Unzip the folder, open it, and double-click the version correspond to your computer. Most likely to be Windows 64 bit.</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver0.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.1: Run the installer.
+            </figcaption>
+            </figure>
+
+            <li>Select Next as shown in Figure 3.2.1</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver1.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.2: Select Next.
+            </figcaption>
+            </figure>
+
+            <li>Select Finish as shown in Figure 3.2.2</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.3: Select Finish.
+            </figcaption>
+            </li>
+            </figcaption>
+            </li></ol>
+          </ol>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Linux</button>
+        <div class="accordion-content">
+          <p>Linux users please download from 
+            <a href="https://s3.amazonaws.com/energiaUS/files/71-ti-permissions.rules" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>. This is required to run the Energia IDE not as root.</p>
+              <ul style="line-height: 1.8;">
+                <li> Excute the following command: <code>sudo mv /71-ti-permissions.rules /etc/udev/rules.d/</code></li>
+                <li> No drivers are required for installation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Step 4 -->
+  <div class="step">
+    <strong>Step 4:</strong> Download
     <a href="https://www.energia.nu/download/" target="_blank" style="color:#CFB991;">
     <b>Energia IDE</b></a> (choose your operating system) and unzip. 
 
@@ -160,7 +237,7 @@
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.1mac.jpg" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.1.1: Downdoaded file.
+            Figure 4.1.1: Downdoaded file.
             </figcaption>
             </li>
 
@@ -168,7 +245,7 @@
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.2mac.jpg" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.1.2: Unzip the file by double-clicking.
+            Figure 4.1.2: Unzip the file by double-clicking.
             </figcaption>
             </figure>
             </li>
@@ -187,7 +264,7 @@
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.1.png" alt="Create folder on desktop" style="max-width: 80%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.2.1: Downdoaded file.
+            Figure 4.2.1: Downdoaded file.
             </figcaption>
             </li>
 
@@ -195,13 +272,13 @@
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.2.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.2.2: Right click the zipped folder to extract.
+            Figure 4.2.2: Right click the zipped folder to extract.
             </figcaption>
             </figure>
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.3.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.2.3: Extract the zipped file to the designated location.
+            Figure 4.2.3: Extract the zipped file to the designated location.
             </figcaption>
             </li>
 
@@ -211,7 +288,7 @@
             <figure style="text-align: left;">
             <img src="getting_started/getting_started_step3.4.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 3.2.4: Check if there is a driver folder.
+            Figure 4.2.4: Check if there is a driver folder.
             </figcaption>
             </li>
           </ol>
@@ -229,16 +306,16 @@
     </div>
   </div>
 
-  <!-- Step 4 -->
+  <!-- Step 5 -->
 
   <div class="step">
-    <strong>Step 4:</strong> Configure the course files in Energia.
+    <strong>Step 5:</strong> Configure the course files in Energia.
     <ol style="line-height: 1.8;"> 
     <li>Open Energia IDE. This will create a folder in your Documents titled “Energia”.</li>
       <figure style="text-align: left;">
           <img src="getting_started/getting_started_step4.1.png" alt="Find Energia in Documents." style="max-width: 70%;">
           <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-          Figure 4.1: Find Energia in Documents.
+          Figure 5.1: Find Energia in Documents.
           </figcaption>
       </figure>
     <li>Download the <a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/Sketchbook.zip" style="color:#CFB991;"><b>ENGR 131 Sketchbook</b></a>.</li>
@@ -246,7 +323,7 @@
     <figure style="text-align: left;">
             <img src="getting_started/getting_started_step4.2.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 4.2: Move sketchbook into Energia.
+            Figure 5.2: Move sketchbook into Energia.
             </figcaption>
             </figure>
     </li>
@@ -256,16 +333,16 @@
        <figure style="text-align: left;">
             <img src="getting_started/getting_started_step4.3.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 4.3: Check files in sketchbook.
+            Figure 5.3: Check files in sketchbook.
             </figcaption>
         </figure>
     </li>
   </ol>
   </div>
 
-  <!-- Step 5 -->
+  <!-- Step 6 -->
   <div class="step">
-    <strong>Step 5:</strong> Setup Energia to communicate with the TI kits.
+    <strong>Step 6:</strong> Setup Energia to communicate with the TI kits.
     <ol style="line-height: 1.8;"> 
     <li>Connect the MSP430 board to your laptop using a cable.</li>
     <li>In Energia, open <code>Tools</code> and set the following:
@@ -274,7 +351,7 @@
           <figure style="text-align: left;">
             <img src="getting_started/getting_started_step5.1.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 5.1: Selecting the correct board.
+            Figure 6.1: Selecting the correct board.
             </figcaption>
             </figure>
         </li>
@@ -283,7 +360,7 @@
           <figure style="text-align: left;">
             <img src="getting_started/getting_started_step5.2.png" alt="Create folder on desktop" style="max-width: 70%;">
             <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
-            Figure 5.2: Selecting port.
+            Figure 6.2: Selecting port.
             </figcaption>
             </figure>
         </li>
@@ -402,17 +479,16 @@
         <li>Change the blinking speed of that LED.</li>
         <li>Turn on the second built-in LED.</li>
         <li>Create an alternating blinking interval to 2 seconds using <code>delay(2000)</code>.</li>
-        <li>Measure the ON and OFF times manually with a stopwatch for at least 8 cycles (this will incorporate human error).</li>
+        <li>Measure the ON and OFF times manually with a stopwatch for at least 10 cycles (this will incorporate human error).</li>
         <li>Record your data in Excel, calculate descriptive statistics (mean, standard deviation, minimum, maximum), and create a graph of the results.</li>
       </ol>
-    <p><strong>Source File:</strong></p>
-<ul style="line-height: 1.8;">
-  <li><a href="document/ENGR131_ICA_Blink_Instructions.pdf" target="_blank" style="color:#CFB991;"><b>Instruction</b></a></li>
-  <li><a href="document/ENGR131_ICA_Blink_LastNames.docx" target="_blank" style="color:#CFB991;"><b>Worksheet</b></a></li>
-  <li><a href="document/ENGR131_ICA_Blink_LastNames.xlsx" target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>
-</ul>
+      <p><strong>Source File:</strong></p>
+        <ul style="line-height: 1.8;">
+         <li><a href="document/ICA1_instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_student_worksheet.docx" style="color:#CFB991;"><b>Worksheet</b></a></li>          
+         <li><a href="https://github.com/Sophiezhaowen/ti-kit-guide/raw/refs/heads/main/document/ICA1_data_analysis.xlsx" target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>          
+        </ul>
 
-      
         <style>
           ul li::marker {
             color: #CFB991;  /* example: Purdue gold tone */
@@ -508,8 +584,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
