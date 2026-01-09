@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TI Kit Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background: #000000; /* Purdue Black */
+      color: #CFB991; /* Purdue Gold */
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Tab navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #CFB991; /* Purdue Gold */
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #000000;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav button.active {
+      background: #000000;
+      color: #CFB991;
+    }
+
+    nav button:hover {
+      background: #333333;
+      color: #CFB991;
+    }
+
+    /* Tab content */
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    h2, h3 {
+      color: #000000;
+    }
+
+    .step {
+      background: #f8f8f8;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 6px solid #CFB991;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .step img {
+      max-width: 100%;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #eee;
+      padding: 0.5rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #CFB991;
+      text-shadow: 0 0 2px #fff, 0 0 6px #CFB991, 0 0 12px #CFB991;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        gap: 12px;
+        padding: 10px;
+      }
+      header img {
+        height: 32px;
+      }
+      header h1 {
+        font-size: 1.2rem;
+      }
+      nav button {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+      }
+}
+
+  </style>
+</head>
+<body>
+
+ <header style="display: flex; align-items: center; gap: 30px; background:#000; padding:16px;">
+  <a href="https://www.purdue.edu/">
+    <img src="pictures/PU-H-Full-Rev-RGB.png" alt="TI Kit Logo" style="height:40px;">
+  </a>
+  <h1 style="
+    color:#CFB991;
+    font-size:1.8rem;
+    margin:0;
+    text-shadow:
+      0 0 1.2px #fff,
+      0 0 2px #CFB991,
+      0 0 4px #CFB991;
+  ">
+    TI Kit Help Center💡
+  </h1>
+  
+</header>
+
+
+
+  <!-- Tab Navigation -->
+  <nav>
+    <button class="tab-btn active" onclick="openTab('getting-started')">Getting Started</button>
+    <button class="tab-btn" onclick="openTab('troubleshooting')">Troubleshooting</button>
+    <button class="tab-btn" onclick="openTab('activities')">Activities</button>
+    <button class="tab-btn" onclick="openTab('supplemental-documents')">Supplemental Documents</button>
+  </nav>
+
+  <!-- Tab Contents -->
+
+  <!-- GETTING STARTED -->  
+  <section id="getting-started" class="tab-content active">
+  <h2>Getting Started</h2>
+
+  <!-- Step 1 -->
+<div class="step">
+  <strong>Step 1:</strong> Create a folder on your desktop to store TI Kit files<br>
+
+  <figure style="text-align: left;">
+    <img src="getting_started/getting_started_step1.png" alt="Create folder on desktop" style="max-width: 80%;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+      Figure 1: Example of creating a folder on the desktop.
+    </figcaption>
+  </figure>
+
+</div>
+
+  <!-- Step 2 -->
+  <div class="step">
+  <strong>Step 2:</strong> Check your TI Kit version: we are using  <b>MSP-EXP430FR5994</b> for this class.<br>
+
+  <figure style="text-align: left;">
+    <img src="getting_started/getting_started_step2.png" alt="Chek TI Kit Version" style="max-width: 70%;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+      Figure 2: Check version from the TI board.
+    </figcaption>
+  </figure>
+
+</div>
+
+  <!-- Step 3 -->
+  <div class="step">
+    <strong style="line-height: 1.8;">Step 3:</strong> Download and install the 
+    <a href="https://energia.nu/guide/install/windows/" target="_blank" style="color: #CFB991;"><b> launchpad driver</b></a>. 
+    <b>The launchpad driver should be unzipped and placed in the folder you created in <i>Step 1</i></b> (the same folder as Energia IDE is in, you will download in next step).
+
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Mac OS</button>
+        <div class="accordion-content">
+          <p>Mac users please download from 
+            <a href="https://engineering.purdue.edu/fye_i2i/wp-content/uploads/2022/08/MSP430LPCDC-1.0.3b-Signed-1.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Windows</button>
+        <div class="accordion-content">
+        <ol style="line-height: 1.8;"> 
+        <li>Windows users please download from 
+            <a href="https://s3.amazonaws.com/energiaUS/files/energia_drivers.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.
+        </li>
+        <li>Unzip the folder and drag it to the folder you created in <i>Step 1</i>.
+
+        <li>Run the installer.
+          <ol style="line-height: 1.8;">
+            <li>Open the unzipped driver folder, and double-click the version correspond to your computer. Most likely to be Windows 64 bit.</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver0.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.1: Run the installer.
+            </figcaption>
+            </figure>
+
+            <li>Select Next as shown in Figure 3.2.1</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver1.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.2: Select Next.
+            </figcaption>
+            </figure>
+
+            <li>Select Finish as shown in Figure 3.2.2</li>
+            <figure style="text-align: left;">
+            <img src="getting_started/driver2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 3.2.3: Select Finish.
+            </figcaption>
+            </li>
+            </figcaption>
+            </li></ol>
+          </ol>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Linux</button>
+        <div class="accordion-content">
+          <p>Linux users please download from 
+            <a href="https://s3.amazonaws.com/energiaUS/files/71-ti-permissions.rules" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>. This is required to run the Energia IDE not as root.</p>
+              <ul style="line-height: 1.8;">
+                <li> Excute the following command: <code>sudo mv /71-ti-permissions.rules /etc/udev/rules.d/</code></li>
+                <li> No drivers are required for installation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Step 4 -->
+  <div class="step">
+    <strong style="line-height: 1.8;">Step 4:</strong> Download
+    <a href="https://www.energia.nu/download/" target="_blank" style="color:#CFB991;">
+    <b>Energia IDE</b></a> (choose your operating system) and unzip. <b>Energia IDE must be placed in the folder you created in <i>Step 1</i></b> (the same folder as the launchpad driver is in).
+
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Mac OS</button>
+        <div class="accordion-content">
+          <p>Mac users please download from 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-macosx-signed.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+                        <ol style="line-height: 1.8;"> 
+            <li>Download the zipped file using the link above.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.1mac.jpg" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 4.1.1: Downdoaded file.
+            </figcaption>
+            </li>
+
+            <li> Double click to unzip, and the app icon will apear.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.2mac.jpg" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 4.1.2: Unzip the file by double-clicking.
+            </figcaption>
+            </figure>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Windows</button>
+        <div class="accordion-content">
+          <p>Windows users please download from 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-windows.zip" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+          <ol style="line-height: 1.8;"> 
+            <li>Download the zipped file using the link above.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.1.png" alt="Create folder on desktop" style="max-width: 80%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 4.2.1: Downdoaded file.
+            </figcaption>
+            </li>
+
+            <li>Extract everything to the folder you created in <i>Step 1</i>. Please note that everything MUST be remained in the same folder after extraction.
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 4.2.2: Right click the zipped folder to extract.
+            </figcaption>
+            </figure>
+            <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step3.3.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 4.2.3: Extract the zipped file to the designated location.
+            </figcaption>
+            </li>
+
+            <li>After extraction, feel free to delete the original zipped folder.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Linux</button>
+        <div class="accordion-content">
+          <p>Linux users please download from 
+            <a href="https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-linux64.tar.xz" target="_blank" style="color:#CFB991;">
+              <b>here</b></a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 5 -->
+
+  <div class="step">
+    <strong>Step 5:</strong> Configure the course files in Energia.
+    <ol style="line-height: 1.8;"> 
+    <li>Open Energia IDE. This will create a folder in your Documents titled “Energia”.</li>
+      <figure style="text-align: left;">
+          <img src="getting_started/getting_started_step4.1.png" alt="Find Energia in Documents." style="max-width: 70%;">
+          <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+          Figure 5.1: Find Energia in Documents.
+          </figcaption>
+      </figure>
+    <li>Download the <a href="Sketchbook.zip" download style="color:#CFB991;"><b>ENGR 131 Sketchbook</b></a>.</li>
+    <li>Unzip the ENGR 131 sketchbook file and copy the folders inside into the “Energia” folder in your Documents.
+    <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step4.2new.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 5.2: Move folders in "sketchbook" into Energia.
+            </figcaption>
+            </figure>
+    </li>
+    <li>Close and restart Energia.</li>
+    <li>Navigate to <code>File</code> → <code>Sketchbook</code>, and you should see the <code>Classes 2B_3A</code>,  
+      <code>ENGR 131</code>, and <code>LaunchPad_Grove_Kit</code> folders with sketches available to use for class.
+       <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step4.3new.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 5.3: Check files in sketchbook.
+            </figcaption>
+        </figure>
+    </li>
+  </ol>
+  </div>
+
+  <!-- Step 6 -->
+  <div class="step">
+    <strong>Step 6:</strong> Setup Energia to communicate with the TI kits.
+    <ol style="line-height: 1.8;"> 
+    <li>Connect the MSP430 board to your laptop using a cable.</li>
+    <li>In Energia, open <code>Tools</code> and set the following:
+      <ul>
+        <li><code>Board</code> → <code>MSP-EXP430FR5994LP</code>
+          <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step5.1.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 6.1: Selecting the correct board.
+            </figcaption>
+            </figure>
+        </li>
+        <li><code>Port</code> → Select the port that corresponds to your laptop’s USB/Type-C connection.
+          If you are unsure which port it is, try each option until the board is detected.
+          <figure style="text-align: left;">
+            <img src="getting_started/getting_started_step5.2.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 6.2: Selecting port.
+            </figcaption>
+            </figure>
+        </li>
+      </ul>
+    </li>
+    <li>Update your board package to the latest version.
+      <ul>
+        <li>Ensure the board is updated with the latest package: <code>Tools</code> → <code>Board</code> → <code>Board Manager</code>. 
+          Under MSP430 dropdown menu, select the latest version. </li>
+          <figure style="text-align: left;">
+            <img src="troubleshooting/boardversion.png" alt="Create folder on desktop" style="max-width: 70%;">
+            <figcaption style="margin-top: 0.5rem; font-style: italic; color: #555;">
+            Figure 6.3: Equip your board with its latest package.
+            </figcaption>
+          </figure>
+      </ul>
+    </li>
+  </ol>
+
+  </div>
+
+
+</section>
+
+<style>
+  .accordion {
+    margin-top: 1rem;
+  }
+
+  .accordion-item {
+    border: 2px solid #CFB991; /* Purdue Gold */
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    width: 100%;
+    text-align: left;
+    background: #fdfdfd; /* Purdue Black */
+    color: #2e2e2e;
+    font-weight: bold;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background: #CFB991;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 1rem;
+    background: #fdfdfd;
+  }
+
+  .accordion-item.active .accordion-content {
+    display: block;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+  
+
+  <!-- TROUBLESHOOTING -->  
+  <section id="troubleshooting" class="tab-content">
+    <h2>TI Kit Troubleshooting</h2>
+    <p>Here are common problems and their solutions.</p>
+    <div class="step">
+      <strong>Communication error between Energia IDE and your TI kit</strong>
+      <ol style="line-height: 1.8;">
+        <li>Ensure your TI kit is plugged in correctly using the provided Micro B (to either USB or Type C) cable.
+          There should be a green power LED lit up when this occurs.</li>
+        <li>The COM port seleted in Energia is not the correct port. While it is generally the highest port number
+          available, this is not always true. All COM ports should be tested if there are Communication issues.</li>
+        <li>Ensure all drivers have been installed. Please refer to <i>Step 3</i> in <i>Getting Started</i>.</li>
+        <li>Restart Energia IDE.</li>
+        <li>Restart your computer. This should not be required, but can help depending on your computer's settings.</li>
+      </ol>
+    </div>
+
+    <div class="step">
+      <strong>Error uploading sketches to your TI kit</strong>
+      <ol style="line-height: 1.8;">
+        <li>Ensure your TI kit is plugged in correctly using the provided Micro B (to either USB or Type C) cable.
+          There should be a green power LED lit up when this occurs.</li>
+        <li>Ensure the board is updated with the latest package: <code>Tools</code> → <code>Board</code> → <code>Board Manager</code>. 
+          Under MSP430 dropdown menu, select the latest version. </li>
+      </ol>
+    </div>
+
+    <div class="step">
+      <strong>Error in uploading with a message showing "need Python 2.7"</strong>
+      <ul style="line-height: 1.8;">
+        <li>Please download the corresponding package <a href="https://www.python.org/downloads/release/python-2718/" target="_blank" style="color:#CFB991;"><b>here</b></a>.</li>
+      </ul>
+    </div>
+
+     <div class="step">
+      <strong>Error installing driver</strong>
+      <ol style="line-height: 1.8;">
+        <li>Install TI UniFlash.</li>
+        <ul style="line-height: 1.8;">
+          <li>Download UniFlash <a href="https://www.ti.com/tool/UNIFLASH" target="_blank" style="color:#CFB991;"><b>here</b></a>.</li>
+          <li>During installation, the MSP430 drivers will also be installed automatically.</li>
+          <li>This option is lighter and faster if you  only need the drivers and a programming tool.</li>
+        </ul>
+        <li>Install Code Composer Studio (CCS). </li>
+        <ul style="line-height: 1.8;">
+          <li>Download CSS <a href="https://www.ti.com/tool/CCSTUDIO" target="_blank" style="color:#CFB991;"><b>here</b></a>.</li>
+          <li>During installation, make sure to select <b>MSP430 device family support</b>.</li>
+          <li>This will install both CCS (for coding and debugging) and the necessary drivers.</li>
+        </ul>
+      </ol>
+      <p style="line-height: 1.8;">
+       ⚠️ Please note: If you already installed the standalone drivers and Windows still does not recognize your LaunchPad, using either UniFlash 
+       or CCS should resolve the issue by updating the drivers automatically.
+      </p>
+    </div>
+
+  </section>
+
+ 
+  <!-- ACTIVITIES -->  
+  <section id="activities" class="tab-content">
+  <h2>TI Kit Activities</h2>
+  <p>Click on an activity to expand and view details:</p>
+
+  <!-- Activity 1 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity: Blink an LED</div>
+    <div class="activity-content">
+      <p style="line-height: 1.8;"> 
+        <strong>Objective:</strong> In this activity, you will practice controlling the built-in LEDs on the MSP430FR5994 by programming them to turn on, 
+        blink at different speeds, alternate, and follow simple patterns. You will also measure the timing of the blinks with a stopwatch to see how human 
+        error affects consistency, then analyze your results using basic statistics. By the end, you’ll gain hands-on experience with both programming a 
+        microcontroller and evaluating real data to support design decisions.</p>
+      <p><strong>Tasks:</strong></p>
+      <ol style="line-height: 1.8;"> 
+        <li>Turn on one of the LaunchPad LEDs (green or red).</li>
+        <li>Change the blinking speed of that LED.</li>
+        <li>Turn on the second built-in LED.</li>
+        <li>Create an alternating blinking interval to 2 seconds using <code>delay(2000)</code>.</li>
+        <li>Measure the ON and OFF times manually with a stopwatch for at least 10 cycles (this will incorporate human error).</li>
+        <li>Record your data in Excel, calculate descriptive statistics (mean, standard deviation, minimum, maximum), and create a graph of the results.</li>
+      </ol>
+      <p><strong>Source File:</strong></p>
+        <ul style="line-height: 1.8;">
+         <li><a href="ICA/ICA_blink/ICA1_lecture_slides.pdf" download style="color:#CFB991;"><b>Lecture Slides</b></a></li>         
+         <li><a href="ICA/ICA_blink/ICA1_instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
+         <li><a href="ICA/ICA_blink/ICA1_student_worksheet.docx" download style="color:#CFB991;"><b>Worksheet</b></a></li>          
+         <li><a href="ICA/ICA_blink/ICA1_data_analysis.xlsx" download target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>          
+        </ul>
+
+        <style>
+          ul li::marker {
+            color: #CFB991;  /* example: Purdue gold tone */
+            font-size: 1.2em; /* optional: make bullets bigger */
+          }
+        </style>
+    </div>
+  </div>
+
+  <!-- Activity 2 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity: Buzzer & Selection Structure</div>
+    <div class="activity-content">
+      <p style="line-height: 1.8;"> 
+        <strong>Objective: </strong> This activity is to introduce you to using the TI MSP430 LaunchPad, 
+        Grove board, buzzer, to design a simple alert system. You will practice writing and modifying 
+        selection structures (if/else logic) to control how the buzzer responds to different conditions. 
+        This will help you understand how decision-making in code can be used to build real-world warning systems.</p>
+      <p><strong>Tasks:</strong></p>
+      <ol style="line-height: 1.8;"> 
+        <li>Draw a block diagram for a microcontroller set up</li>
+        <li>Draw a flowchart that represents the selection structure for a given scenario.</li>
+        <li>Modify the selection structure in the given code such that the buzzer beeps as desired.</li>
+      </ol>
+    
+      <p><strong>Source File:</strong></p>
+        <ul style="line-height: 1.8;">
+         <li><a href="ICA/ICA_TaumSauk_part1/ICA_TaumSauk_Part1_Lecture_Slides.pdf" download style="color:#CFB991;"><b>Lecture Slides</b></a></li>         
+         <li><a href="ICA/ICA_TaumSauk_part1/ICA_TaumSauk_Part1_Instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
+         <li><a href="ICA/ICA_TaumSauk_part1/ICA_TaumSauk_Part1_student_worksheet.docx" download style="color:#CFB991;"><b>Worksheet</b></a></li>             
+         <li><a href="ICA/ICA_TaumSauk_part1/Taum Sauk Part 1.zip" download target="_blank" style="color:#CFB991;"><b>Taum Sauk Part 1 Sketchbook</b></a> 
+        Please refer to <i>Getting Started</i> - <i>Step 5</i> for adding the sketchbook to your Energia.</li>          
+        </ul>
+
+        <style>
+          ul li::marker {
+            color: #CFB991;  /* example: Purdue gold tone */
+            font-size: 1.2em; /* optional: make bullets bigger */
+          }
+        </style>
+      
+    </div>
+  </div>
+
+  <!-- Activity 3 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity: Early Warning System</div>
+    <div class="activity-content">
+      <p style="line-height: 1.8;">
+        <strong>Objective: </strong>
+        The purpose of this activity is to guide you in designing a simple early warning system, inspired by the real-world 
+        failure of the Taum Sauk Reservoir, where human error and lack of safeguards led to disaster. Using an ultrasonic ranger, 
+        you will measure the distance to an object and apply a selection structure in your code to decide whether to trigger a 
+        buzzer alert when the object gets too close. This hands-on project shows how sensors and logic can work together to prevent 
+        accidents by warning operators before a threshold is crossed. To evaluate how reliable your system is, you will also test 
+        its fidelity by calculating the percent error and sum of squared errors (SSE) between your measured distances and the 
+        theoretical threshold. Through this, you’ll not only practice programming and hardware integration but also see how engineers 
+        assess accuracy and safety in real systems.
+      </p>
+      <p><strong>Tasks:</strong></p>
+      <ol style="line-height: 1.8;">
+        <li>Draw a block diagram for a microcontroller set up.</li>
+        <li>Write a pseudocode for the warning system logics.</li>
+        <li>Modify the code such that it alerts with sound when an object gets too close.</li>
+        <li>Record distances measured when hearing the alert, compare these values to the theoretical threshold you 
+          defined, and analyze the errors.</li>
+        <li>Comment on your error analyses.</li>  
+      </ol>
+
+      <p><strong>Source File:</strong></p>
+      <ul style="line-height: 1.8;">
+       <li><a href="ICA/ICA_TaumSauk_part2/ICA_Taum_Sauk_Part2_Lecture_Slides.pdf" download style="color:#CFB991;"><b>Lecture Slides</b></a></li>         
+       <li><a href="ICA/ICA_TaumSauk_part2/ICA_Taum_Sauk_Part2_Instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
+       <li><a href="ICA/ICA_TaumSauk_part2/ICA_Taum_Sauk_Part2_student_worksheet.docx" download style="color:#CFB991;"><b>Worksheet</b></a></li>
+       <li><a href="ICA/ICA_TaumSauk_part2/ICA_Taum_Sauk_Part2_Data_Analysis.xlsx" download target="_blank" style="color:#CFB991;"><b>Excel Template</b></a></li>           
+       <li><a href="ICA/ICA_TaumSauk_part2/Taum Sauk Part 2.zip" download target="_blank" style="color:#CFB991;"><b>Taum Sauk Part 2 Sketchbook</b></a> 
+        Please refer to <i>Getting Started</i> - <i>Step 5</i> for adding the sketchbook to your Energia.</li>          
+      </ul>
+
+      <style>
+        ul li::marker {
+          color: #CFB991;  /* example: Purdue gold tone */
+          font-size: 1.2em; /* optional: make bullets bigger */
+        }
+      </style>
+    </div>
+  </div>
+
+  <!-- Activity 4 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity: Real-Time Data Aquisition</div>
+    <div class="activity-content">
+      <p style="line-height: 1.8;">
+        <strong>Objective: </strong>
+        Design and test a simple alarm system using the MSP430-Grove board to simulate how early detection of high water levels could 
+        have prevented the Taum Sauk Reservoir failure. Students will use an ultrasonic sensor to measure distance, a buzzer to trigger 
+        an alert when the water level is too high, and Excel Data Streamer to visualize data in real time.
+      </p>
+      <p><strong>Tasks:</strong></p>
+      <ol style="line-height: 1.8;">
+        <li>Data Streamer Screenshots
+          <ul style="line-height: 1.8;">
+            <li>Capture a screenshot showing the three columns: Time, CH1, and CH2.</li>
+            <li>Include at least one screenshot where: CH1 displays "ALERT: Water 
+              level critical!" and CH2 shows 1(indicating a critical water level).</li>
+          </ul>
+        </li>
+
+        <li>Excel Chart
+          <ul style="line-height: 1.8;">
+            <li>Create a chart using the data obtained from Data Streamer.</li>
+            <li>Set X-axis to be <i>Time (s)</i> and Y-axis to be <i>Distance (cm)</i>.</li>
+            <li>Add a descriptive title.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><strong>Source File:</strong></p>
+      <ul style="line-height: 1.8;">
+       <li><a href="ICA/ICA_TS_realTimeDataAquisition/ICA_TS_realTimeDataAquisition_lecture_slides.pdf" download style="color:#CFB991;"><b>Lecture Slides</b></a></li>               
+       <li><a href="ICA/ICA_TS_realTimeDataAquisition/ICA_TS_realTimeDataAquisition_student_worksheet.docx" download style="color:#CFB991;"><b>Worksheet</b></a></li>        
+      </ul>
+
+      <style>
+        ul li::marker {
+          color: #CFB991;  /* example: Purdue gold tone */
+          font-size: 1.2em; /* optional: make bullets bigger */
+        }
+      </style>
+    </div>
+  </div>
+
+  <!-- Activity 5 -->
+  <div class="activity-box" onclick="toggleActivity(this)">
+    <div class="activity-header">In-Class Activity: Smart Light</div>
+    <div class="activity-content">
+      <p style="line-height: 1.8;">
+        <strong>Objective: </strong>
+        The purpose of this activity is to guide you in building a smart lighting system that responds intelligently to environmental changes. 
+        Using a light sensor, you will detect ambient brightness, and with an ultrasonic ranger, you will detect nearby objects. By applying 
+        logical operators (AND / OR) within your code, you will combine these sensor inputs to control when an LED turns on — for example, 
+        turning on the LED only when it is dark and someone is nearby. This project demonstrates how multiple sensors can work together through 
+        simple logic to enable more responsive and energy-efficient systems, similar to those found in real-world smart homes and safety 
+        applications. Along the way, you will also explore different logic structures, observe their effects, and reflect on how system behavior 
+        changes with different conditions.
+      </p>
+      <p><strong>Tasks:</strong></p>
+      <ol style="line-height: 1.8;">
+        <li>Write a clear pseudocode or flowchart that describes the logic controlling the LED using AND and OR operators.</li>
+        <li>Combine and modify code from the light and ultrasonic examples to implement the smart lighting behavior.</li>
+        <li>Test the system under different light and distance conditions and observe how different logic operators affect the LED response.</li>
+        <li>Experiment with and reflect on alternative logic structures to see how system behavior changes and discuss potential real-world applications.</li>
+      </ol>
+
+      <p><strong>Source File:</strong></p>
+      <ul style="line-height: 1.8;">
+       <li><a href="ICA/ICA_Smart_Light/ICA_Smart_Light_Lecture_Slides.pdf" download style="color:#CFB991;"><b>Lecture Slides</b></a></li>         
+       <li><a href="ICA/ICA_Smart_Light/ICA_Smart_Light_instruction.pdf" download style="color:#CFB991;"><b>Instruction</b></a></li>         
+       <li><a href="ICA/ICA_Smart_Light/ICA_Smart_Light_student_worksheet.docx" download style="color:#CFB991;"><b>Worksheet</b></a></li>        
+       <li><a href="ICA/ICA_Smart_Light/smart_light.zip" download target="_blank" style="color:#CFB991;"><b> Smart Light Sketchbook</b></a> 
+        Please refer to <i>Getting Started</i> - <i>Step 5</i> for adding the sketchbook to your Energia.</li>          
+      </ul>
+
+      <style>
+        ul li::marker {
+          color: #CFB991;  /* example: Purdue gold tone */
+          font-size: 1.2em; /* optional: make bullets bigger */
+        }
+      </style>
+    </div>
+  </div>
+
+
+</section>
+
+<style>
+  .activity-box {
+    border: 2px solid #CFB991; /* Purdue Gold */
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow: auto;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+
+  .activity-header {
+    background: #CFB991; 
+    color: #2e2e2e; 
+    padding: 1rem;
+    font-weight: bold;
+  }
+
+  .activity-content {
+    max-height: 0;
+    overflow: auto;
+    padding: 0 1rem;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .activity-box.active .activity-content {
+    max-height: 500px; /* enough to expand */
+    padding: 1rem;
+  }
+
+  .activity-content::-webkit-scrollbar {
+  width: 8px;
+  }
+
+  .activity-content::-webkit-scrollbar-thumb {
+  background-color: #CFB991;
+  border-radius: 4px;
+  }
+
+  .activity-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  }
+
+</style>
+
+<script>
+  function toggleActivity(box) {
+    box.classList.toggle("active");
+  }
+</script>
+
+  <script>
+    function openTab(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Remove active state from buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show the selected tab
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+   <!-- SUPPLEMENTAL DOCUMENTS -->  
+<section id="supplemental-documents" class="tab-content active">
+  <h2 style="color:#CFB991;">Supplemental Documents</h2>
+  <p style="color:black;">Here are some resources that could be useful:</p>
+
+    <!-- Box 3: TI Kit Return -->
+  <div style="border: 2px solid #CFB991; border-radius: 12px; padding: 16px; margin: 16px 0; background-color: white;">
+    <h3 style="color:#CFB991; margin-top:0;">TI Kit Return Procedure</h3>
+    <ul style="line-height: 1.8; list-style-type: disc; padding-left: 20px;" class="doc-list">
+      <li>
+        <a href="supplemental_documents/ti_return/TI Kit Return Instruction.pdf" 
+        target="_blank" 
+        style="color:black; text-decoration:none;">
+        <i class="fa-regular fa-file-lines" style="margin-right:6px;"></i>
+        <b>Return Instruction</b>
+        </a>
+      </li>
+
+      <li>
+        <a href="supplemental_documents/ti_return/TI Kit Repacking.pdf" 
+        target="_blank" 
+        style="color:black; text-decoration:none;">
+        <i class="fa-regular fa-file-lines" style="margin-right:6px;"></i>
+        <b>Kit Repacking Instruction</b>
+        </a>
+      </li>
+
+      <li>
+        <b>Excels for components' quantities documentation</b>
+        <ul style="line-height: 1.8; list-style-type: disc; padding-left: 20px;" class="doc-list">
+          <li>
+            <a href="https://purdue0-my.sharepoint.com/:x:/g/personal/xue153_purdue_edu/EcwIpZNwmvxEsjUy6i1R-cIBsKTbnoKhKnztZEmtuBw25w?e=9uKpS1" style="color: black; text-decoration: none;">
+            <i class="fas fa-file-excel" style="margin-right:6px; color:#c28e0e;"></i>Aguilar
+            </a>
+          </li>
+
+          <li>
+            <a href="https://purdue0-my.sharepoint.com/:x:/g/personal/xue153_purdue_edu/EVXOg0i8K-VCs5qDsAy4FfIBf148M1q29ceyCfu4lE7m6Q?e=ioewJB" style="color: black; text-decoration: none;">
+            <i class="fas fa-file-excel" style="margin-right:6px; color:#c28e0e;"></i>Ferdoush
+            </a>
+          </li>
+
+          <li>
+            <a href="https://purdue0-my.sharepoint.com/:x:/g/personal/xue153_purdue_edu/EVy20SZyJ5pMru89FxFPs4gBo8rk3M9H0l8ivWQ9UzA3sA?e=kjGgsT" style="color: black; text-decoration: none;">
+            <i class="fas fa-file-excel" style="margin-right:6px; color:#c28e0e;"></i>McFall
+            </a>
+          </li>
+
+          <li>
+            <a href="https://purdue0-my.sharepoint.com/:x:/g/personal/xue153_purdue_edu/EdEibZSe879Mq1zzIr1MkkoBstEw_lQU_rR9jEfJxRm5gQ?e=hkhEUR" style="color: black; text-decoration: none;">
+            <i class="fas fa-file-excel" style="margin-right:6px; color:#c28e0e;"></i>Wible
+            </a>
+          </li>
+
+          <li>
+            <a href="https://purdue0-my.sharepoint.com/:x:/g/personal/xue153_purdue_edu/EULTV5pAvORFpz7AIZMM8DgB4gq5xtHqD33upH4UUupn9w?e=PSTa0V" style="color: black; text-decoration: none;">
+            <i class="fas fa-file-excel" style="margin-right:6px; color:#c28e0e;"></i>Morphew
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Box 1: General Documents -->
+  <div style="border: 2px solid #CFB991; border-radius: 12px; padding: 16px; margin: 16px 0; background-color: white;">
+    <h3 style="color:#CFB991; margin-top:0;">General References</h3>
+    <ul style="line-height: 1.8; list-style-type: disc; padding-left: 20px;" class="doc-list">
+      <li><a href="https://energia.nu/guide/" target="_blank" style="color:black;"><b>Energia Guide</b></a></li>
+      <li><a href="supplemental_documents/MSP430_Workshop.pdf" target="_blank" style="color:black;"><b>MSP430 Workshop</b></a></li>
+    </ul>
+  </div>
+
+  <!-- Box 2: Sensor Code Supplemental -->
+  <div style="border: 2px solid #CFB991; border-radius: 12px; padding: 16px; margin: 16px 0; background-color: white;">
+    <h3 style="color:#CFB991; margin-top:0;">Sensor Code Supplemental</h3>
+    <ul style="line-height: 1.8; list-style-type: disc; padding-left: 20px;" class="doc-list">
+      <li>
+        <a href="https://docs.google.com/document/d/1_6I9Y1gfO0tglBxo7hzoSpm3bhry687WIcYKb3fPzDg/edit?usp=sharing" 
+        target="_blank" 
+        style="color:black; text-decoration:none;">
+        <i class="fa-regular fa-file-lines" style="margin-right:6px;"></i>
+        <b>Sensor Overview and Sample Codes</b>
+        </a>
+      </li>
+
+      <li>
+        Download the following driver libraries as needed. Be sure to extract the files and place them in the appropriate code folder.
+        Refer to "Sensor Overview and Sample Codes" for more details.
+        <ul style="line-height: 1.8; list-style-type: disc; padding-left: 20px;" class="doc-list">
+          <li>
+            <a href="supplemental_documents/tm1637_files.zip" download style="color: black; text-decoration: none;">
+            <i class="fa-solid fa-folder" style="margin-right:6px; color:#c28e0e;"></i>
+            <b>tm1637</b>
+            </a>
+            : for Grove 4-digit display (the sample code contains <code>#include "TM1637.h"</code>)
+          </li>
+
+          <li>
+            <a href="supplemental_documents/dht_files.zip" download style="color: black; text-decoration: none;">
+            <i class="fa-solid fa-folder" style="margin-right:6px; color:#c28e0e;"></i>
+            <b>dht</b>
+            </a>
+            : for Grove Temperature&Humidity Sensor Pro v1.3 (the sample code contains <code>#include "DHT.h"</code>)
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="supplemental_documents/sensor_demo.zip" download
+        target="_blank" 
+        style="color:black; text-decoration:none;">
+        <i class="fa-solid fa-code" style="margin-right:6px;"></i>
+        <b>Sample Codes</b>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+</section>
+
+</body>
+</html>
